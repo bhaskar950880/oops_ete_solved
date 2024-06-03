@@ -4,7 +4,8 @@
 
 
 1.	Explain the procedural and object-oriented paradigm along with advantages and disadvantages.
-ChatGPT
+
+
 Sure, let's break down procedural and object-oriented programming paradigms along with their respective advantages and disadvantages:
 
 Procedural Programming Paradigm:
@@ -32,7 +33,7 @@ Learning Curve: Learning to think and design in an object-oriented manner can be
 In summary, both procedural and object-oriented paradigms have their own strengths and weaknesses, and the choice between them often depends on factors such as project requirements, team expertise, and performance considerations.
 
 pillars 
-ChatGPT
+
 Certainly! In the context of object-oriented programming (OOP), the "four pillars" typically refer to the four fundamental principles of OOP, which are:
 
 Encapsulation:
@@ -57,8 +58,13 @@ It allows different classes to be treated as instances of a common superclass th
 Polymorphism enables code to be written in a generic manner, promoting flexibility, extensibility, and code reuse. It also facilitates the implementation of interfaces and the use of dynamic binding.
 These four pillars form the foundation of object-oriented design and are essential concepts for building robust, maintainable, and scalable software systems. They provide a framework for organizing and structuring code in a way that promotes modularity, flexibility, and reusability.
 
+
+
+
 2.	What are pillars of OOP paradigm. Explain each one of them with example. 
-ChatGPT
+
+
+
 The pillars of Object-Oriented Programming (OOP) are the core principles that guide the design and implementation of object-oriented systems. These pillars are:
 
 Encapsulation:
@@ -79,12 +85,23 @@ Polymorphism means "many forms" and refers to the ability of objects to take on 
 Example: Suppose we have a Shape class with a method calculateArea(). We can create subclasses like Circle, Rectangle, and Triangle, each overriding the calculateArea() method to provide its own implementation suitable for the specific shape. When we call calculateArea() on an instance of Circle, Rectangle, or Triangle, polymorphism ensures that the appropriate implementation is invoked based on the actual type of the object.
 These pillars form the foundation of object-oriented design and provide a systematic approach to building modular, reusable, and maintainable software systems.
 
+
+
+
 3.	Develop a program for creating a class named Students, initializing attributes such as name, age, and grade during object instantiation.
-ChatGPT
+
+
+
 Sure, here's a Python program to create a class named Student with attributes name, age, and grade initialized during object instantiation:
 
 python
+
+
+
 Copy code
+
+
+
 class Student:
     def __init__(self, name, age, grade):
         self.name = name
@@ -109,8 +126,15 @@ We define a class named Student with an __init__ method, which is called automat
 The display_info method is defined to display the information of the student object. It prints out the name, age, and grade of the student.
 We create an instance of the Student class named student1 with the values "Alice" for name, 18 for age, and "A" for grade.
 Finally, we call the display_info method on the student1 object to display the information of the student.
+
+
+
+
+
+
 4.	Write a program to establish a valid empty class named Students, devoid of any properties.
-ChatGPT
+
+
 Certainly! In Python, you can create an empty class by using the pass statement inside the class definition. Here's how you can create a valid empty class named Students:
 
 python
@@ -129,8 +153,12 @@ We define a class named Students.
 Inside the class definition, the pass statement is used, which is a null operation that does nothing. It allows us to define an empty class without any properties or methods.
 We then create an instance of the Students class using the class name followed by parentheses.
 Finally, we use the type() function to check the type of the created instance, which confirms that it is indeed an instance of the Students class.
+
+
+
+
 5.	Design a program for creating a child class Teacher that inherits properties from the parent class Staff.
-ChatGPT
+
 Sure! Here's a Python program demonstrating how to create a child class Teacher that inherits properties from the parent class Staff:
 
 python
@@ -198,8 +226,11 @@ The __init__ method is used to initialize the instance attributes max_speed and 
 The display_info method is defined to display the information of the vehicle, including its maximum speed and mileage.
 We create an instance of the Vehicle class named car with a maximum speed of 150 mph and a mileage of 30 mpg.
 Finally, we call the display_info method on the car object to display its information.
+
+
+
 7.	Create a Python program to define a person class with attributes like name, country, and date of birth, and implement a method for determining the person’s age.
-ChatGPT
+
 Here's a Python program that defines a Person class with attributes name, country, and date_of_birth, and implements a method to determine the person's age:
 
 python
@@ -299,8 +330,12 @@ The withdraw method allows withdrawing funds from the bank account. It checks if
 The display_info method displays the account number, account holder's name, and current balance.
 We create an instance of the BankAccount class named account1 with an account number "123456789", account holder's name "John Doe", and an initial balance of 1000.
 We deposit funds, withdraw funds, and display the account information to demonstrate the functionality of the BankAccount class.
+
+
+
+
 9.	Discuss the importance of access modifiers (e.g., public, private, protected) in achieving the objectives of Object-Oriented Programming (OOP) in Python.
-ChatGPT
+
 Access modifiers, such as public, private, and protected, play a crucial role in achieving the objectives of Object-Oriented Programming (OOP) in Python. Here's how they contribute to OOP principles:
 
 Encapsulation:
@@ -325,8 +360,10 @@ Public methods define the interface through which polymorphic behavior is achiev
 Private methods may contain helper functions or implementation details that contribute to the polymorphic behavior but are not directly accessible from outside the class.
 In Python, access modifiers are implemented using naming conventions rather than explicit keywords. Conventionally, attributes and methods prefixed with a single underscore (_) are considered as protected, while those prefixed with a double underscore (__) are considered as private. However, Python does not enforce strict access control like some other languages, so developers must adhere to these conventions to achieve the desired level of encapsulation and abstraction. Despite this flexibility, access modifiers remain essential for writing robust, maintainable, and scalable object-oriented Python code.
 
+
+
 10.	Explain how a destructor can be defined and utilized in a Python class.
-ChatGPT
+
 In Python, a destructor is a special method called __del__() that gets invoked when an object is about to be destroyed, i.e., when the object is no longer referenced and is being garbage-collected. The primary purpose of a destructor is to perform cleanup actions before the object is removed from memory.
 
 Here's how you can define and utilize a destructor in a Python class:
@@ -384,6 +421,10 @@ The output will be:
 
 csharp
 Copy code
+
+
+
+
 10
 This is a private method.
 The implications of using the private access modifier convention in Python are as follows:
@@ -397,6 +438,10 @@ Limited privacy: While private members are not accessible through regular attrib
 Code readability: Properly using the private access modifier convention can enhance code readability and maintainability by clearly indicating which members are intended to be internal to the class and not part of its public interface.
 
 Overall, while Python's private access modifier convention provides some level of privacy and encapsulation, it's important to understand its limitations and use it judiciously in conjunction with other object-oriented principles such as encapsulation, abstraction, and inheritance.
+
+
+
+
 
 11.	Explore the usage of the 'private' access modifier in Python and discuss its implications.
 ChatGPT
@@ -445,6 +490,9 @@ Limited privacy: True privacy is not achieved with Python's private access modif
 Code readability: Using the private access modifier convention can enhance code readability by clearly indicating which members are intended to be internal to the class. It helps developers understand which members are part of the class's public interface and which are implementation details.
 
 Flexibility: Python's approach offers flexibility, allowing developers to access private
+
+
+
 
 12.	Enumerate the different types of polymorphism in Object-Oriented Programming (OOP) in Python.
 ChatGPT
