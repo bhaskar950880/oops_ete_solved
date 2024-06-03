@@ -1,3 +1,8 @@
+
+
+
+
+
 1.	Explain the procedural and object-oriented paradigm along with advantages and disadvantages.
 ChatGPT
 Sure, let's break down procedural and object-oriented programming paradigms along with their respective advantages and disadvantages:
@@ -3326,6 +3331,5 @@ root.mainloop()
 
 
 
-
-
+https://chatgpt.com/share/e77d0083-d262-46bb-a4d7-4834320c4204?oai-dm=1
 
