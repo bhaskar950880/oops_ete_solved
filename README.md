@@ -796,6 +796,216 @@ window.mainloop()
 This code creates a GUI where the user can input a list of numbers, select an operation (minimum or average), and see the result displayed. The user can also exit the application by clicking the "Exit" button.
 
 
+73. Differentiating create_line, create_oval, and create_rectangle Methods in Canvas Widget
+create_line: Draws a straight line between two or more points.
+
+Usage: canvas.create_line(x1, y1, x2, y2, ...)
+Example: canvas.create_line(10, 10, 200, 200)
+create_oval: Draws an oval within a bounding rectangle defined by its top-left and bottom-right corners.
+
+Usage: canvas.create_oval(x1, y1, x2, y2)
+Example: canvas.create_oval(10, 10, 200, 200)
+create_rectangle: Draws a rectangle defined by its top-left and bottom-right corners.
+
+Usage: canvas.create_rectangle(x1, y1, x2, y2)
+Example: canvas.create_rectangle(10, 10, 200, 200)
+74. Using create_line to Draw Different Shapes
+Line: canvas.create_line(10, 10, 200, 200)
+Rectangle: canvas.create_line(10, 10, 200, 10, 200, 200, 10, 200, 10, 10)
+Square: canvas.create_line(10, 10, 110, 10, 110, 110, 10, 110, 10, 10)
+Triangle: canvas.create_line(10, 10, 200, 10, 105, 200, 10, 10)
+75. Geometry Management: pack(), grid(), and place()
+Geometry Management: Refers to the way widgets are arranged within a container (like a window or frame).
+pack(): Packs widgets in a block; you can specify the side (top, bottom, left, right).
+grid(): Places widgets in a grid (rows and columns); allows more control over layout.
+place(): Places widgets at an absolute position you specify.
+76. Explaining pack(), grid(), and place() with Examples
+python
+Copy code
+import tkinter as tk
+
+root = tk.Tk()
+
+# pack() example
+frame1 = tk.Frame(root, bg='red', width=100, height=100)
+frame1.pack(side='left', padx=10, pady=10)
+
+# grid() example
+frame2 = tk.Frame(root, bg='green', width=100, height=100)
+frame2.grid(row=0, column=0, padx=10, pady=10)
+
+# place() example
+frame3 = tk.Frame(root, bg='blue', width=100, height=100)
+frame3.place(x=200, y=50)
+
+root.mainloop()
+77. Choosing Color and Date in Tkinter
+Choosing Color: Use colorchooser module.
+
+python
+Copy code
+from tkinter import colorchooser
+
+color = colorchooser.askcolor(title="Choose color")
+print(color)
+Choosing Date: Use tkcalendar module (needs to be installed separately).
+
+python
+Copy code
+from tkinter import Tk
+from tkcalendar import Calendar
+
+root = Tk()
+cal = Calendar(root, selectmode='day', year=2024, month=6, day=3)
+cal.pack(pady=20)
+
+def get_date():
+    print(cal.get_date())
+
+button = tk.Button(root, text="Get Date", command=get_date)
+button.pack(pady=20)
+
+root.mainloop()
+78. Difference Between Iterator and Iterable
+Iterable: An object capable of returning its members one at a time, such as lists, tuples, strings.
+Iterator: An object representing a stream of data; it returns data one element at a time using __next__() method.
+79. Operations on Images in Tkinter
+Use PIL (Pillow) for image manipulations.
+python
+Copy code
+from tkinter import Tk, Label
+from PIL import Image, ImageTk
+
+root = Tk()
+image = Image.open("path/to/image.jpg")
+photo = ImageTk.PhotoImage(image)
+
+label = Label(root, image=photo)
+label.pack()
+
+root.mainloop()
+80. Virtual Environments
+Virtual Environments: Isolated environments to manage dependencies for different projects.
+Importance: Avoids dependency conflicts, ensures projects have required libraries.
+Creation:
+bash
+Copy code
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+81. Multiple Decorators on a Single Function
+python
+Copy code
+def decorator1(func):
+    def wrapper():
+        print("Decorator 1")
+        func()
+    return wrapper
+
+def decorator2(func):
+    def wrapper():
+        print("Decorator 2")
+        func()
+    return wrapper
+
+@decorator1
+@decorator2
+def my_function():
+    print("Hello, World!")
+
+my_function()
+82. Count Occurrences of Each Word (Ignoring Case and Punctuation)
+python
+Copy code
+import re
+from collections import Counter
+
+def count_words(text):
+    words = re.findall(r'\b\w+\b', text.lower())
+    return Counter(words)
+
+text = "Hello, hello! How are you? Are you fine?"
+print(count_words(text))
+83. Find Words Starting with a Specific Letter
+python
+Copy code
+import re
+
+def find_words_starting_with(letter, text):
+    pattern = fr'\b{letter}\w*\b'
+    return re.findall(pattern, text, re.IGNORECASE)
+
+text = "Apple and avocado are awesome fruits."
+print(find_words_starting_with('a', text))
+84. Validate Email Address
+python
+Copy code
+import re
+
+def validate_email(email):
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return bool(re.match(pattern, email))
+
+email = "example@example.com"
+print(validate_email(email))
+85. Calculate Total Price for Each Item and Grand Total
+python
+Copy code
+from functools import reduce
+
+def calculate_totals(items):
+    totals = list(map(lambda item: item[0] * item[1], items))
+    grand_total = reduce(lambda x, y: x + y, totals)
+    return totals, grand_total
+
+items = [(10, 2), (20, 3), (30, 4)]
+print(calculate_totals(items))
+86. Squares of Even Numbers
+python
+Copy code
+def filter_and_square_evens(numbers):
+    evens = filter(lambda x: x % 2 == 0, numbers)
+    squares = map(lambda x: x ** 2, evens)
+    return list(squares)
+
+numbers = [1, 2, 3, 4, 5, 6]
+print(filter_and_square_evens(numbers))
+87. Sum of Positive Numbers
+python
+Copy code
+from functools import reduce
+
+def sum_of_positives(numbers):
+    positives = filter(lambda x: x >= 0, numbers)
+    return reduce(lambda x, y: x + y, positives)
+
+numbers = [-1, 2, 3, -4, 5]
+print(sum_of_positives(numbers))
+88. Randomly Select Elements from List
+python
+Copy code
+import random
+
+def select_random_elements(elements, n):
+    random.shuffle(elements)
+    return random.sample(elements, n)
+
+elements = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(select_random_elements(elements, 3))
+89. Regex Module in Python
+Regex Module: Provides functions to work with regular expressions.
+Functions: findall(), search(), match(), sub(), split(), etc.
+Meta Characters: . ^ $ * + ? { } [ ] \ | ( )
+90. Geometry Method in Tkinter
+Geometry Method: Sets the dimensions and position of a window.
+python
+Copy code
+import tkinter as tk
+
+root = tk.Tk()
+root.geometry("400x300+100+200")  # width x height + x_offset + y_offset
+root.mainloop()
+
+
 
 
 
