@@ -3356,10 +3356,17 @@ print(select_random_elements(elements, 3))
 Regex Module: Provides functions to work with regular expressions.
 Functions: findall(), search(), match(), sub(), split(), etc.
 Meta Characters: . ^ $ * + ? { } [ ] \ | ( )
+
+
 90. Geometry Method in Tkinter
+
+
 Geometry Method: Sets the dimensions and position of a window.
 python
+
+
 Copy code
+
 import tkinter as tk
 
 root = tk.Tk()
